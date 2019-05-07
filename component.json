@@ -1,0 +1,103 @@
+{
+    "title": "Transportation Laws and Incentives",
+    "description": "Query our database of State and Federal Laws and Incentives for Alternative Fuels",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/nrel.gov/transportation-incentives-laws/0.1.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://developer.nrel.gov/api/transportation-incentives-laws",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "api_key": {
+                "label": "api_key (api_key)",
+                "viewClass": "TextFieldView",
+                "note": "API Key"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "get_v1__output_format_": {
+            "main": "./lib/actions/get_v1__output_format_.js",
+            "title": "Return a full list of laws and incentives that match your query.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_v1__output_format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_v1_category_list__output_format_": {
+            "main": "./lib/actions/get_v1_category_list__output_format_.js",
+            "title": "Return the law categories for a given category type.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_v1_category_list__output_format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_v1_pocs__output_format_": {
+            "main": "./lib/actions/get_v1_pocs__output_format_.js",
+            "title": "Get the points of contact for a given jurisdiction.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_v1_pocs__output_format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_v1__id___output_format_": {
+            "main": "./lib/actions/get_v1__id___output_format_.js",
+            "title": "Fetch the details of a specific law given the law's ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_v1__id___output_format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

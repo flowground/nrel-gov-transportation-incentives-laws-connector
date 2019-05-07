@@ -1,0 +1,18 @@
+{
+    "type": "object",
+    "properties": {
+        "output_format": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "json",
+                "xml"
+            ],
+            "default": "json"
+        },
+        "jurisdiction": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

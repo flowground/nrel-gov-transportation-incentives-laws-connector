@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+        "output_format": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "json",
+                "xml"
+            ],
+            "default": "json"
+        },
+        "id": {
+            "required": true,
+            "type": "integer"
+        },
+        "poc": {
+            "type": "boolean",
+            "default": false
+        }
+    }
+}

@@ -1,0 +1,56 @@
+{
+    "type": "object",
+    "properties": {
+        "output_format": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "json",
+                "xml",
+                "csv"
+            ],
+            "default": "json"
+        },
+        "limit": {
+            "type": "integer",
+            "default": 10
+        },
+        "jurisdiction": {
+            "type": "string"
+        },
+        "technology": {
+            "type": "string"
+        },
+        "incentive_type": {
+            "type": "string"
+        },
+        "regulation_type": {
+            "type": "string"
+        },
+        "user_type": {
+            "type": "string"
+        },
+        "poc": {
+            "type": "boolean",
+            "default": false
+        },
+        "recent": {
+            "type": "boolean",
+            "default": false
+        },
+        "expired": {
+            "type": "boolean",
+            "default": false
+        },
+        "law_type": {
+            "type": "string"
+        },
+        "keyword": {
+            "type": "string"
+        },
+        "local": {
+            "type": "boolean",
+            "default": false
+        }
+    }
+}
